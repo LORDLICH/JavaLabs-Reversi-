@@ -5,6 +5,16 @@ public class Tile extends Rectangle {
 
     private Piece piece;
 
+    private double mouseX, mouseY;
+
+    public double getMouseX() {
+        return mouseX;
+    }
+
+    public double getMouseY() {
+        return mouseY;
+    }
+
     public boolean hasPiece(){
         return piece != null;
     }
@@ -18,13 +28,20 @@ public class Tile extends Rectangle {
     }
 
 
-    public Tile(boolean condition, int x, int y){
-        setWidth(condition ? Main.TILE_SIZE : Main.TILE_SIZE - 2);
-        setHeight(condition ? Main.TILE_SIZE : Main.TILE_SIZE - 2);
+    public Tile(int x, int y){
+        setWidth(Main.TILE_SIZE - 2);
+        setHeight(Main.TILE_SIZE - 2);
 
-        relocate(condition ? x * Main.TILE_SIZE : x * Main.TILE_SIZE + 1, condition ?  y * Main.TILE_SIZE : y * Main.TILE_SIZE + 1);
+        relocate(x * Main.TILE_SIZE + 1, y * Main.TILE_SIZE + 1);
 
-        setFill(condition ? Color.valueOf("#000000") : Color.valueOf("#006400"));
+        setFill(Color.DARKGREEN);
+
+        setOnMousePressed(event -> {
+            mouseX = event.getSceneX();
+            mouseY = event.getSceneY();
+        });
     }
+
+
 
 }

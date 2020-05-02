@@ -29,10 +29,10 @@ public class Tile extends Rectangle {
 
 
     public Tile(int x, int y){
-        setWidth(Main.TILE_SIZE - 2);
-        setHeight(Main.TILE_SIZE - 2);
+        setWidth(Reversi.TILE_SIZE - 2);
+        setHeight(Reversi.TILE_SIZE - 2);
 
-        relocate(x * Main.TILE_SIZE + 1, y * Main.TILE_SIZE + 1);
+        relocate(x * Reversi.TILE_SIZE + 1, y * Reversi.TILE_SIZE + 1);
 
         setFill(Color.DARKGREEN);
 

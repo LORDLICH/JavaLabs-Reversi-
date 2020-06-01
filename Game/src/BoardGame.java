@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 
 public interface BoardGame {
     public void makeMove(int X, int Y);
@@ -13,6 +13,6 @@ public interface BoardGame {
 
     public boolean legalMove(int X, int Y);
 
-    public int checkMove(int X, int Y);
+    public ArrayList<Position> checkMove(int X, int Y);
 
 }
